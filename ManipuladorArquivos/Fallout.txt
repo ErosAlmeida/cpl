@@ -1,0 +1,155 @@
+; Provides 10,000 of all crafting materials and crops
+player.AddItem 001BF72D 10000; Acid
+player.AddItem 001BF72E 10000; Adhesive
+player.AddItem 0006907A 10000; Aluminum
+player.AddItem 001BF72F 10000; Antiseptic
+player.AddItem 000AEC5C 10000; Asbestos
+player.AddItem 000AEC5B 10000; Ballistic Fiber
+player.AddItem 000AEC5D 10000; Bone
+player.AddItem 000AEC5E 10000; Ceramic
+player.AddItem 0006907B 10000; Circuitry
+player.AddItem 000AEC5F 10000; Cloth
+player.AddItem 00106D99 10000; Concrete
+player.AddItem 0006907C 10000; Copper
+player.AddItem 000AEC60 10000; Cork
+player.AddItem 0006907D 10000; Crystal
+player.AddItem 001BF730 10000; Fertilizer
+player.AddItem 00069087 10000; Fiber Optics
+player.AddItem 000AEC61 10000; Fiberglass
+player.AddItem 0006907E 10000; Gear
+player.AddItem 00069085 10000; Glass
+player.AddItem 000AEC62 10000; Gold
+player.AddItem 000AEC63 10000; Lead
+player.AddItem 000AEC64 10000; Leather
+player.AddItem 00069086 10000; Nuclear Material
+player.AddItem 001BF732 10000; Oil
+player.AddItem 0006907F 10000; Plastic
+player.AddItem 00106D98 10000; Rubber
+player.AddItem 00069081 10000; Screw
+player.AddItem 000AEC66 10000; Silver
+player.AddItem 00069082 10000; Spring
+player.AddItem 000731A4 10000; Steel
+player.AddItem 000731A3 10000; Wood
+player.AddItem 000F742E 10000; Carrot
+player.AddItem 000330F8 10000; Corn
+player.AddItem 000EF24D 10000; Gourd
+player.AddItem 000FAFEB 10000; Melon
+player.AddItem 00033102 10000; Mutfruit
+player.AddItem 000E0043 10000; Razorgrain
+player.AddItem 0009DCC4 10000; Tato
+
+
+
+
+; Provides 100 of all crafting material shipments
+player.AddItem 001EC131 100
+player.AddItem 001EC132 100
+player.AddItem 001EC133 100
+player.AddItem 001EC134 100
+player.AddItem 001EC135 100
+player.AddItem 001EC136 100
+player.AddItem 001EC137 100
+player.AddItem 001EC138 100
+player.AddItem 001EC139 100
+player.AddItem 001EC13A 100
+player.AddItem 001EC13B 100
+player.AddItem 001EC13C 100
+player.AddItem 001EC13D 100
+player.AddItem 001EC13E 100
+player.AddItem 001EC13F 100
+player.AddItem 001EC140 100
+player.AddItem 001EC141 100
+player.AddItem 001EC142 100
+player.AddItem 001EC143 100
+player.AddItem 001EC144 100
+player.AddItem 001EC145 100
+player.AddItem 001EC146 100
+player.AddItem 001EC147 100
+player.AddItem 001EC148 100
+player.AddItem 001EC149 100
+player.AddItem 001EC14A 100
+player.AddItem 001EC14B 100
+player.AddItem 001EC14C 100
+player.AddItem 001EC14D 100
+player.AddItem 001EC14E 100
+player.AddItem 001EC14F 100
+player.AddItem 001EC150 100
+player.AddItem 001EC151 100
+player.AddItem 001EC152 100
+player.AddItem 001EC153 100
+player.AddItem 001EC15A 100
+player.AddItem 001EC15B 100
+player.AddItem 001EC15C 100
+
+
+
+
+;Provides 10,000 ammo for all weapons
+; Bullets
+player.AddItem 0001F66B 10000; .308 Round
+player.AddItem 0004CE87 10000; .38 Round
+player.AddItem 0009221C 10000; .44 Round
+player.AddItem 0001F66A 10000; .45 Round
+player.AddItem 0001F279 10000; .50 Caliber
+player.AddItem 0001F276 10000; 10mm Round
+player.AddItem 0001F278 10000; 5.56 Round
+player.AddItem 0001F66C 10000; 5mm Round
+player.AddItem 0001F673 10000; Shotgun Shell
+; Explosives
+player.AddItem 000E6B2E 10000; Mini Nuke (fat man)
+player.AddItem 000CABA3 10000; Missile
+; Energy
+player.AddItem 0018ABDF 10000; 2mm Electromagnetic Cartridge
+player.AddItem 001025AA 10000; Alien Blaster Round
+player.AddItem 0018ABE2 10000; Cryo Cell
+player.AddItem 000C1897 10000; Fusion Cell (weapons)
+player.AddItem 00075FE4 10000; Fusion Core (power armor)
+player.AddItem 000DF279 10000; Gamma Round
+player.AddItem 0001DBB7 10000; Plasma Cartridge
+; Other
+player.AddItem 000CAC78 10000; Flamer Fuel
+player.AddItem 001025AE 10000; Flare
+player.AddItem 000E942C 10000; Junk
+player.AddItem 000FD11C 10000; Cannonball
+player.AddItem 000FE269 10000; Railway Spike
+; Syringes
+player.AddItem 00058AE9 10000; Berserk Syringe
+player.AddItem 00058AEB 10000; Bleed Out Syringe
+player.AddItem 000375BB 10000; Bloatfly Larva Syringe
+player.AddItem 00058AF2 10000; Endangerol Syringe
+player.AddItem 00058AF4 10000; Lock Joint Syringe
+player.AddItem 00058AF5 10000; Mind Cloud Syringe
+player.AddItem 00058AF7 10000; Pax Syringe
+player.AddItem 00058B0C 10000; Radscorpion Venom Syringe
+player.AddItem 00058B0E 10000; Yellow Belly Syringe
+
+
+
+; Grenades and Mines
+player.additem 000e5750 10; Nuke Grenade
+player.additem 0010a340 10; Nuke Mine
+player.additem 000e6b2e 10; Mini Nuke
+
+
+; Adds an extreme amount of caps 
+player.additem f 65535
+
+
+
+
+; Add Perk Points
+CGF "Game.AddPerkPoints" 10;
+
+
+
+
+;
+GetPlayerGrabbedRef
+[id].amod 1E73BD; Explosive
+[id].amod 1CC2AD; Two Shot
+[id].amod 1CC2AC; Unlimited ammo capacity (no reload)
+[id].amod 
+[id].amod 
+[id].amod 
+[id].amod 
+
