@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,10 +24,8 @@ public class Executor {
     private ArrayList<String> bufferPrimario;
     private ArrayList<String> bufferSecundario;
 
-    @SuppressWarnings("unused")
     private HashMap<String, Token> tabelaSimbolosPrograma;
 
-    @SuppressWarnings("unused")
     private boolean IsNumber(String valor)
     {
         Pattern pattern = Pattern.compile(this.captureNumbers);
@@ -37,7 +36,6 @@ public class Executor {
         return false;
     }
 
-    @SuppressWarnings("unused")
     private boolean IsLiteral(String valor)
     {
         Pattern pattern = Pattern.compile(this.captureLiteral);
@@ -48,7 +46,6 @@ public class Executor {
         return false;
     }
 
-    @SuppressWarnings("unused")
     private boolean IsCharacter(String valor)
     {
         Pattern pattern = Pattern.compile(this.captureCharacters);
@@ -59,7 +56,6 @@ public class Executor {
         return false;
     }
 
-    @SuppressWarnings("unused")
     private boolean IsIdentifier(String valor)
     {
         Pattern pattern = Pattern.compile(this.captureIdentifier);
@@ -160,43 +156,49 @@ public class Executor {
         System.out.println("----------------------------------------");        
     }
 
-    public void AnalisarMontandoTabelaSimbolos(){
+   public void AnalisarMontandoTabelaSimbolos(){
         this.tabelaSimbolosPrograma = new HashMap<>();
-
-        for (String lexema : this.bufferSecundario) {
-            Token token = new Token();
-            
-            if (IsNumber(lexema)) {
-                token.setTipo("NUMERO");
-            } else if (IsLiteral(lexema)) {
-                token.setTipo("LITERAL");
-            } else if (IsCharacter(lexema)) {
-                token.setTipo("CARACTERE");
-            } else if (IsIdentifier(lexema)) {
-                token.setTipo("IDENTIFICADOR");
-            } else {
-                token.setTipo("DESCONHECIDO");
+        TabelaSimbolosLinguagem tblSimbolosLinguagem = new TabelaSimbolosLinguagem();
+        for (String texto : this.bufferSecundario) {
+            String chave = texto.toUpperCase();
+            Token valor = null;
+            if (tblSimbolosLinguagem.getTabela().containsKey(texto.toLowerCase())){
+                
+                valor = tblSimbolosLinguagem.getTabela().get(texto.toLowerCase());
+                valor.setToken(texto);
+                
             }
-        
-            token.setLexema(lexema);
-            this.tabelaSimbolosPrograma.put(lexema, token);
+            else{
+                if (this.IsNumber(texto)){
+                    valor = new Token(texto, texto, tblSimbolosLinguagem.getNumber(), "Valor Numérico", 0);
+                }
+                else if (this.IsLiteral(texto)){
+                    valor = new Token(texto, texto, tblSimbolosLinguagem.getLiteral(), "Literal", 0);
+                }
+                else if (this.IsCharacter(texto)){
+                    valor = new Token(texto, texto, tblSimbolosLinguagem.getSimbol(), "Caracter Especial", 0);
+                }
+                else if (this.IsIdentifier(texto)){
+                    valor = new Token(texto, texto, tblSimbolosLinguagem.getIdentifier(), "Identificador", 0);
+                }
+                else{
+                    valor = new Token(texto, texto, tblSimbolosLinguagem.getUndefined(), "Não pertence a linguagem", 0);
+                }
+            }
+            this.tabelaSimbolosPrograma.put(chave, valor);
         }
-
-      
-        for (String lexema : this.tabelaSimbolosPrograma.keySet()) {
-            Token token = this.tabelaSimbolosPrograma.get(lexema);
-            System.out.println("Lexema: " + token.getLexema() + " | Tipo: " + token.getTipo());
-        }
-
     }
 
     public void ImprimirTabelaSimbolosPrograma(){
-      System.out.println("----------------------------------------");
-    System.out.println("##### Tabela de Símbolos do Programa #####");
-    for (Token token : this.tabelaSimbolosPrograma.values()) {
-        System.out.println(token);
+        System.out.println("----------------------------------------");
+        System.out.println("##### Tabela da Análise Léxica: #####");
+        Integer contador = 1;
+        for (Map.Entry<String,Token> pair : this.tabelaSimbolosPrograma.entrySet()) {
+            System.out.printf("%3s", contador.toString());
+            System.out.printf(" | %20s", pair.getKey());
+            System.out.printf(" | %30s \n", pair.getValue().toString());
+            contador++;
+        }
+        System.out.println("----------------------------------------");  
     }
-    System.out.println("----------------------------------------");
-    }
-
 }
